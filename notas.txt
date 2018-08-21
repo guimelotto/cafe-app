@@ -1,0 +1,63 @@
+configuration{
+  bottlePassword
+}
+users{
+  uid{
+    nickname
+  }
+}
+userHistory{
+  userUid{
+    uid{
+      drinkTimestamp
+      drinkDetails{
+        drinkSize
+        drinkName
+      }
+    }
+  }
+}
+wantCoffee{
+  uid{
+    nickname
+    timestamp
+  }
+}
+activeSession{
+  uid{
+    nickname
+    pushToken
+  }
+}
+currentBottle{
+  startTimestamp
+  endTimestamp
+  drinkers{
+    uid{
+      userUid{
+        nickname
+      }
+      drinkTimestamp
+      drinkDetails{
+        drinkSize
+        drinkName
+      }
+    }
+  }
+}
+bottles{
+  uid{
+    startTimestamp
+    endTimestamp
+    drinkers{
+      uid{
+        nickname
+        drinkTimestamp
+        drinkDetails{
+          drinkSize
+          drinkName
+        }
+      }
+    }
+  }
+}

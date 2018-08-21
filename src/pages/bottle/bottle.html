@@ -1,0 +1,39 @@
+<ion-content padding>
+  <br>
+  <h1 text-center>{{haveCoffee ? 'Temos café gostoso!' : 'ACABOU O CAFÉ!'}}</h1>
+  <br>
+  <div *ngIf="haveCoffee">
+    <button ion-button block (click)="finishBottle()">CABOU O CAFÉ</button>
+  </div>
+
+  <div *ngIf="!haveCoffee">
+    <button ion-button block (click)="startBottle()">TEM CAFÉ</button>
+  </div>
+
+  <br>
+  <hr>
+  <br>
+
+  <ion-list no-lines *ngIf="haveCoffee">
+    <ion-item *ngFor="let drinker of drinkers | async | reverse">
+      <ion-icon name="cafe" item-start></ion-icon>
+      <h3>{{drinker.size.size}}</h3>
+      <p>{{drinker.user.name}}</p>
+      <p>{{drinker.timestamp | date:'dd/MM/yy HH:mm'}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-list no-lines *ngIf="!haveCoffee">
+    <h3 text-center>Pessoas em crise de abstinência</h3>
+    <ion-item *ngFor="let asker of askers | async | reverse">
+      <ion-icon name="hand" item-start></ion-icon>
+      <h3>{{asker.user.name}}</h3>
+      <p>{{asker.timestamp | date:'dd/MM/yy HH:mm'}}</p>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button full (click)="returnLanding()">SAIR</button>
+</ion-footer>

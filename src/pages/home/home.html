@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cafépp
+    </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="logout()">
+        <ion-icon name="exit"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="currentBottle ; else noCoffeeMsg">
+    <h2 text-center>Temos café!</h2>
+    <p text-center>{{ currentBottle.startTimestamp | date:'dd/MM HH:mm' }}</p>
+  </div>
+  <br>
+  <br>
+  <ng-template #noCoffeeMsg>
+    <h2 text-center>Acabou o café...</h2>
+  </ng-template>
+
+  <ion-grid>
+
+    <ion-row *ngIf="currentBottle ; else noCoffeeBtn">
+      <ion-col col-12>
+        <h3 text-center>Tomei um café:</h3>
+      </ion-col>
+      <ion-col col-6 *ngFor="let drink of drinkSizes">
+        <button ion-button block large (click)="drinkCoffee(drink)">{{drink.size}}</button>
+      </ion-col>
+    </ion-row>
+
+    <ng-template #noCoffeeBtn>
+      <button ion-button block large (click)="askForCoffee()">QUERO CAFÉÉÉ!!!</button>
+    </ng-template>
+
+  </ion-grid>
+
+</ion-content>

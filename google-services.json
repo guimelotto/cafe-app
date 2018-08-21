@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "289589317383",
+    "firebase_url": "https://quero-cafe-app.firebaseio.com",
+    "project_id": "quero-cafe-app",
+    "storage_bucket": "quero-cafe-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:289589317383:android:24c4cf174793c795",
+        "android_client_info": {
+          "package_name": "br.com.querocafe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "289589317383-g2cvssaqa2gmmcejiuhherde55ddccu0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.querocafe",
+            "certificate_hash": "b9f17ce2ef30bcac398cce70908878f780987d4c"
+          }
+        },
+        {
+          "client_id": "289589317383-fo7orlvt0h9njoptsoba50ms6r63lrib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBsUCs8YE-CfExJSPZtViN4bvnLWS80zw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "289589317383-fo7orlvt0h9njoptsoba50ms6r63lrib.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "289589317383-s19s1936o66u90h5s57a3ih3jppbci3r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.querocafe"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

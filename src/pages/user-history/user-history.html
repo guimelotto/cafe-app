@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Histórico</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor="let item of history | async | reverse">
+        <ion-icon name="cafe" item-start></ion-icon>
+      <h3>{{item.size.size}}</h3>
+      <p>{{item.timestamp | date:'dd/MM/yy HH:mm'}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
