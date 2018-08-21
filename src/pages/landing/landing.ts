@@ -48,11 +48,13 @@ export class LandingPage {
         {
           text: "Ativar modo garrafa",
           handler: form => {
-            this._data.configuration.subscribe((data: any) => {
+            let config = this._data.configuration.subscribe((data: any) => {
               if (data.bottlePassword == form.password)
                 this._navCtrl.push(BottlePage);
-              else this.errorToast();
-            });
+              else
+                this.errorToast();
+              config.unsubscribe();
+              });
           }
         }
       ]

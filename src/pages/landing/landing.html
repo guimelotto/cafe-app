@@ -1,13 +1,26 @@
 <ion-content padding>
-  <ion-grid>
+  <div class="back"></div>
+  <ion-grid style="height: 100%;">
     <ion-row>
-      <ion-col>
-        <button ion-button block (click)="doLogin()">Login</button>
+      <ion-col class="title">
+        <h1>Café</h1>
+        <h2>App</h2>
+      </ion-col>
+    </ion-row>
+    <ion-row align-items-end style="height: 80%">
+      <ion-col class="subtitle">
+        <h1>Sem Esperas</h1>
+        <h2>Consiga aquilo que te faz feliz</h2>
       </ion-col>
     </ion-row>
     <ion-row>
       <ion-col>
-        <button ion-button block (click)="isBottleApp()">Sou o tablet da garrafa!</button>
+        <button color="coffe" round ion-button block (click)="doLogin()">Login</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button color="coffe" round ion-button block (click)="isBottleApp()">Sou o tablet da garrafa!</button>
       </ion-col>
     </ion-row>
   </ion-grid>
