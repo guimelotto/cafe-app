@@ -29,15 +29,9 @@ export class DataProvider {
     this.bottles = this._afDB
       .list("/bottles")
       .snapshotChanges()
-      .pipe(
-        map(changes =>
-          changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
-        )
-      );
+      .pipe(map(changes => changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))));
 
-    this.currentBottleDrinkers = this._afDB
-      .list(`/currentBottle/drinkers`)
-      .valueChanges();
+    this.currentBottleDrinkers = this._afDB.list(`/currentBottle/drinkers`).valueChanges();
 
     this.askers = this._afDB.list(`/currentAsk`).valueChanges();
 
@@ -46,11 +40,8 @@ export class DataProvider {
   }
 
   public doLogin(): Promise<any> {
-    if (this._platform.is("cordova")) {
-      return this._nativeGoogleLogin();
-    } else {
-      return this._webGoogleLogin();
-    }
+    if (this._platform.is("cordova")) return this._nativeGoogleLogin();
+    else return this._webGoogleLogin();
   }
 
   private async _nativeGoogleLogin(): Promise<firebase.User> {
@@ -140,9 +131,7 @@ export class DataProvider {
   }
 
   public getUserHistory() {
-    this.userHistory = this._afDB
-      .list(`/userHistory/${this.userData.uid}`)
-      .valueChanges();
+    this.userHistory = this._afDB.list(`/userHistory/${this.userData.uid}`).valueChanges();
   }
 
   public drinkCoffee(size: { uid; size }) {

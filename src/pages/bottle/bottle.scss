@@ -1,3 +1,8 @@
 page-bottle {
-
+  ion-footer {
+    height: 56px;
+    .button {
+      height: 56px !important;
+    }
+  }
 }
